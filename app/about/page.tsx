@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 
 type JobItemProps = {
   jobTitle: string
@@ -20,14 +20,14 @@ function JobItem({ jobTitle, company, date, companyDescription, tasks }: JobItem
           style={{ objectFit: "cover" }} />
       </div>
       <div>
-        <h3 className='text-center mb-5 sm:mb-2 sm:text-left text-3xl text-slate-900 dark:text-white'>
-          {jobTitle}{jobTitle.length > 0 ? ' at ' : ''}<span className="font-semibold">{company}</span>
+        <h3 className="text-center mb-5 sm:mb-2 sm:text-left text-3xl text-slate-900 dark:text-white">
+          {jobTitle}{jobTitle.length > 0 ? " at " : ""}<span className="font-semibold">{company}</span>
         </h3>
         <p className="text-lg text-slate-900 dark:text-white">{date}</p>
         <p className="text-lg italic text-slate-900 dark:text-white">{companyDescription}</p>
         <ul className="text-lg ml-4 list-disc text-slate-900 dark:text-white">
           {tasks.map((task, index) => (
-            <li key={index} className='text-xl'>{task}</li>
+            <li key={index} className="text-xl">{task}</li>
           ))}
         </ul>
       </div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
               className="rounded-full"
               style={{ objectFit: "cover" }} />
           </div>
-          <p className="text-xl text-slate-900 dark:text-white">Hello! My name is Vinicius S. F. Kuhlmann. I'm a data scientist and web developer from São Paulo, Brazil. I have a Computer Science bachelor's degree from the University of São Paulo, as well as certificates for special studies in Data Science and Software Engineering. I also have two years of internship experience and have worked on many side projects.</p>
+          <p className="text-xl text-slate-900 dark:text-white">Hello! My name is Vinicius S. F. Kuhlmann. I&apos;m a data scientist and web developer from São Paulo, Brazil. I have a Computer Science bachelor&apos;s degree from the University of São Paulo, as well as certificates for special studies in Data Science and Software Engineering. I also have two years of internship experience and have worked on many side projects.</p>
         </div>
 
       </section>
@@ -65,10 +65,10 @@ export default function AboutPage() {
         </h2>
 
         <JobItem
-          jobTitle='Intern Data Analyst'
+          jobTitle="Intern Data Analyst"
           company="Embraer"
           date="03/2023 - 12/2023"
-          companyDescription="Brazil's largest aerospace company and the world's third largest."
+          companyDescription="Brazil&apos;s largest aerospace company and the world&apos;s third largest."
           tasks={[
             "Development of apps and automations in Power Platform and Python, like a production line inventory control app that updates the database through barcode scans, or a web scraper that collects data from a company platform.",
             "Creation and maintenance of dashboards in Power BI that allowed management to monitor the production line, reducing the time to identify and solve problems.",
@@ -77,7 +77,7 @@ export default function AboutPage() {
         />
 
         <JobItem
-          jobTitle='Intern Programmer'
+          jobTitle="Intern Programmer"
           company="CPX Digital"
           date="02/2023 - 02/2023"
           companyDescription="A consulting firm that supports fundraising for startups."
@@ -97,7 +97,7 @@ export default function AboutPage() {
         </h2>
 
         <JobItem
-          jobTitle=''
+          jobTitle=""
           company="University of São Paulo"
           date="03/2019 - 12/2023"
           companyDescription="The best university in Latin America and one of the best in the world according to QS World."

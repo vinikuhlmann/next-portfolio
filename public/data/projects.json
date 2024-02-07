@@ -27,7 +27,7 @@
     "imgAlt": "R code and a volatility chart",
     "href": "https://vinikuhlmann.github.io/portfolio/ipynb-notebooks/google-stock-price-forecasting.html",
     "title": "eGARCH Simulation",
-    "description": "A simulation of Google's stock price using an eGARCH model in R",
+    "description": "A simulation of Google&apos;s stock price using an eGARCH model in R",
     "tags": [
       "Time Series",
       "Regression",

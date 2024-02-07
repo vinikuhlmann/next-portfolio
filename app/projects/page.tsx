@@ -1,5 +1,5 @@
-import Image from 'next/image';
-import projects from '../../public/data/projects.json';
+import Image from "next/image";
+import projects from "../../public/data/projects.json";
 
 type GalleryItemProps = {
   imgSrc: string
