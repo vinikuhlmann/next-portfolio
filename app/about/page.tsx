@@ -18,18 +18,18 @@ function JobItem({
   // replace ' in tasks with &apos; to avoid breaking the HTML
   tasks = tasks.map((task) => task.replace(/'/g, "&apos;"));
   return (
-    <div className="flex mt-12 flex-col sm:flex-row sm:items-start items-center gap-8">
+    <div className="mt-12 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
       <div className="relative size-40 shrink-0">
         <Image
           fill
-          src={`/img/${ company }.jpg`}
+          src={`/img/${company}.jpg`}
           alt="Profile picture"
           className="rounded-lg"
           style={{ objectFit: "cover" }}
         />
       </div>
       <div>
-        <h3 className="text-center mb-5 sm:mb-2 sm:text-left text-3xl text-slate-900 dark:text-white">
+        <h3 className="mb-5 text-center text-3xl text-slate-900 sm:mb-2 sm:text-left dark:text-white">
           {jobTitle}
           {jobTitle.length > 0 ? " at " : ""}
           <span className="font-semibold">{company}</span>
@@ -38,7 +38,7 @@ function JobItem({
         <p className="text-lg italic text-slate-900 dark:text-white">
           {companyDescription}
         </p>
-        <ul className="text-lg ml-4 list-disc text-slate-900 dark:text-white">
+        <ul className="ml-4 list-disc text-lg text-slate-900 dark:text-white">
           {tasks.map((task, index) => (
             <li key={index} className="text-xl">
               {task}
@@ -52,12 +52,12 @@ function JobItem({
 
 export default function AboutPage() {
   return (
-    <main className="max-w-4xl mx-auto">
-      <section id="aboutme" className="p-6 sm:mt-10 mb-12">
-        <h2 className="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+    <main className="mx-auto max-w-4xl">
+      <section id="aboutme" className="mb-12 p-6 sm:mt-10">
+        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
           About me
         </h2>
-        <div className="flex flex-col sm:flex-row items-center gap-5">
+        <div className="flex flex-col items-center gap-5 sm:flex-row">
           <div className="relative size-40 shrink-0">
             <Image
               fill
@@ -80,8 +80,8 @@ export default function AboutPage() {
 
       <hr className="mx-auto bg-black dark:bg-white" />
 
-      <section id="workexperience" className="p-6 my-12">
-        <h2 className="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+      <section id="workexperience" className="my-12 p-6">
+        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
           Work experience
         </h2>
 
@@ -111,8 +111,8 @@ export default function AboutPage() {
 
       <hr className="mx-auto bg-black dark:bg-white" />
 
-      <section id="education" className="p-6 my-12">
-        <h2 className="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white">
+      <section id="education" className="my-12 p-6">
+        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
           Education
         </h2>
 
