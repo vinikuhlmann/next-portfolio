@@ -15,12 +15,14 @@ function JobItem({
   companyDescription,
   tasks,
 }: JobItemProps) {
+  // replace ' in tasks with &apos; to avoid breaking the HTML
+  tasks = tasks.map((task) => task.replace(/'/g, "&apos;"));
   return (
     <div className="flex mt-12 flex-col sm:flex-row sm:items-start items-center gap-8">
       <div className="relative size-40 shrink-0">
         <Image
           fill
-          src={`/img/${company}.jpg`}
+          src={`/img/${ company }.jpg`}
           alt="Profile picture"
           className="rounded-lg"
           style={{ objectFit: "cover" }}
