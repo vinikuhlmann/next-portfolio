@@ -17,9 +17,9 @@ function Introduction() {
           />
         </div>
         <p className="text-xl text-slate-900 dark:text-white">
-          Hello! My name is Vinicius Silva Fernandes Kuhlmann, and I'm a Software Developer and Data scientist and from São Paulo, Brazil.
+          Hello! My name is Vinicius Silva Fernandes Kuhlmann, and I&apos;m a Software Developer and Data scientist and from São Paulo, Brazil.
           <br></br>
-          Challenges are my passion, as I'm always looking for new ways to improve my skills and knowledge. Share your ideas with me, and let's build something amazing together!
+          Challenges are my passion, as I&apos;m always looking for new ways to improve my skills and knowledge. Share your ideas with me, and let&apos;s build something amazing together!
         </p>
       </div>
     </section>
@@ -41,12 +41,12 @@ function JobItem({
   company,
   date,
   companyDescription,
-  bulletPoints: tasks,
+  bulletPoints,
   imgSrc,
   imgAlt,
 }: JobItemProps) {
   // replace ' in tasks with &apos; to avoid breaking the HTML
-  tasks = tasks.map((task) => task.replace(/'/g, "&apos;"));
+  bulletPoints = bulletPoints.map((point) => point.replace(/'/g, "&apos;"));
   let at = jobTitle != undefined && company != undefined ? " at " : "";
   return (
     <div className="mt-12 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
@@ -72,9 +72,9 @@ function JobItem({
           {companyDescription}
         </p>
         <ul className="ml-4 list-disc text-lg text-slate-900 dark:text-white text-left">
-          {tasks.map((task, index) => (
+          {bulletPoints.map((point, index) => (
             <li key={index} className="text-xl">
-              {task}
+              {point}
             </li>
           ))}
         </ul>
@@ -144,7 +144,7 @@ function USP() {
       company="University of São Paulo"
       date="03/2019 - 12/2022"
       bulletPoints={[
-        "Bachelors degree in Computer Science, with a focus on data science and software engineering.",
+        "Bachelor's degree in Computer Science, with a focus on data science and software engineering.",
         "Certificates of special studies in Software Engineering, Data Science and Advanced Programming Techniques.",
       ]}
       imgSrc="/img/usp.jpg"

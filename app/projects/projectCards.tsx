@@ -24,6 +24,9 @@ export function ProjectCard({
 
 }) {
   if (!imgAlt) imgAlt = title;
+  // replace ' with &apos; to avoid html parsing error
+  title = title.replace(/'/g, '&apos;');
+  description = description.replace(/'/g, '&apos;');
   const hrefIsExternal = href.startsWith('http');
   return (
     <div className="rounded-lg p-5 dark:bg-gray-800 h-full">
@@ -41,7 +44,7 @@ export function ProjectCard({
           <h3 className="mb-2 text-2xl font-bold  text-gray-700 dark:text-white">
             <span className="flex items-center">
               {title}
-              {hrefIsExternal && <FontAwesomeIcon icon={faExternalLink} className="ml-2 w-4 h-4" />}
+              <FontAwesomeIcon icon={faExternalLink} className="ml-2 w-4 h-4" />
             </span>
           </h3>
           <p className="text-lg text-gray-700 dark:text-white">{date}</p>
