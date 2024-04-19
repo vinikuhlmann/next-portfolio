@@ -1,0 +1,12 @@
+{
+  "href": "https://www.kaggle.com/code/vinikuhlmann/liver-disease-regression",
+  "title": "Liver Disease Regression",
+  "imgSrc": "/img/liver_disease.jpg",
+  "imgAlt": "Regression analysis on liver disease dataset",
+  "description": "Identifying the most important features for predicting liver disease using regression analysis.",
+  "tags": [
+    "Statistics",
+    "R",
+    "Kaggle"
+  ]
+}

@@ -1,11 +1,39 @@
 import Image from "next/image";
+import SectionTitle from "@/components/sectionTitle";
+import Link from "next/link";
+
+function Introduction() {
+  return (
+    <section id="introduction" className="mb-12 p-6 sm:mt-10">
+      <SectionTitle text="Introduction" />
+      <div className="flex flex-col items-center gap-5 sm:flex-row">
+        <div className="relative size-40 shrink-0">
+          <Image
+            fill
+            src="/img/profile.jpg"
+            alt="Profile picture"
+            className="rounded-full"
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+        <p className="text-xl text-slate-900 dark:text-white">
+          Hello! My name is Vinicius Silva Fernandes Kuhlmann, and I'm a Software Developer and Data scientist and from São Paulo, Brazil.
+          <br></br>
+          Challenges are my passion, as I'm always looking for new ways to improve my skills and knowledge. Share your ideas with me, and let's build something amazing together!
+        </p>
+      </div>
+    </section>
+  );
+}
 
 type JobItemProps = {
-  jobTitle: string;
-  company: string;
+  jobTitle?: string;
+  company?: string;
   date: string;
-  companyDescription: string;
-  tasks: string[];
+  companyDescription?: string;
+  bulletPoints: string[];
+  imgSrc: string;
+  imgAlt: string;
 };
 
 function JobItem({
@@ -13,32 +41,37 @@ function JobItem({
   company,
   date,
   companyDescription,
-  tasks,
+  bulletPoints: tasks,
+  imgSrc,
+  imgAlt,
 }: JobItemProps) {
   // replace ' in tasks with &apos; to avoid breaking the HTML
   tasks = tasks.map((task) => task.replace(/'/g, "&apos;"));
+  let at = jobTitle != undefined && company != undefined ? " at " : "";
   return (
     <div className="mt-12 flex flex-col items-center gap-8 sm:flex-row sm:items-start">
       <div className="relative size-40 shrink-0">
         <Image
           fill
-          src={`/img/${company}.jpg`}
-          alt="Profile picture"
+          src={imgSrc}
+          alt={imgAlt}
           className="rounded-lg"
           style={{ objectFit: "cover" }}
         />
       </div>
-      <div>
-        <h3 className="mb-5 text-center text-3xl text-slate-900 sm:mb-2 sm:text-left dark:text-white">
+      <div className="flex flex-col text-center sm:text-left">
+        <h3 className="text-center text-3xl text-slate-900 sm:text-left dark:text-white">
           {jobTitle}
-          {jobTitle.length > 0 ? " at " : ""}
+          {at}
           <span className="font-semibold">{company}</span>
         </h3>
-        <p className="text-lg text-slate-900 dark:text-white">{date}</p>
+        <p className="text-lg text-slate-900 dark:text-gray-300">
+          {date}
+        </p>
         <p className="text-lg italic text-slate-900 dark:text-white">
           {companyDescription}
         </p>
-        <ul className="ml-4 list-disc text-lg text-slate-900 dark:text-white">
+        <ul className="ml-4 list-disc text-lg text-slate-900 dark:text-white text-left">
           {tasks.map((task, index) => (
             <li key={index} className="text-xl">
               {task}
@@ -50,83 +83,152 @@ function JobItem({
   );
 }
 
+function Freelancer() {
+  return (
+    <JobItem
+      jobTitle="Self-employed Software Dev"
+      date="01/2022 - Present"
+      bulletPoints={[
+        "Web development with React, Next.js, and Tailwind CSS.",
+        "ETL Pipelines and task automations in Python.",
+        "PostgreSQL database management.",
+        "Data analysis and visualization in Python.",
+      ]}
+      imgSrc="/img/freelance.jpg"
+      imgAlt="Desk with a laptop and a coffee cup"
+    />
+  );
+}
+
+function Embraer() {
+  return (
+    <JobItem
+      jobTitle="Software Dev Internship"
+      company="Embraer"
+      date="03/2023 - 12/2023"
+      companyDescription="Brazil's largest aerospace company and the world's third largest."
+      bulletPoints={[
+        "Working alongside a large, English-speaking multidisciplinary team.",
+        "ETL Pipelines and task automations in Power Automate.",
+        "Data analysis and visualization in Power BI.",
+        "User interfaces in Power Apps.",
+        "Web scraping in Python.",
+      ]}
+      imgSrc="/img/embraer.jpg"
+      imgAlt="Embraer logo"
+    />
+  );
+}
+
+function CPXDigital() {
+  return (
+    <JobItem
+      jobTitle="Software Dev Internship"
+      company="CPX Digital"
+      date="02/2023 - 02/2023"
+      companyDescription="A consulting firm for startup fundraising."
+      bulletPoints={[
+        "Web scraping in Python to gather data from potential customers.",
+        "Data processing in Python.",
+      ]}
+      imgSrc="/img/cpx.jpg"
+      imgAlt="CPX Digital logo"
+    />
+  );
+}
+
+
+function USP() {
+  return (
+    <JobItem
+      company="University of São Paulo"
+      date="03/2019 - 12/2022"
+      bulletPoints={[
+        "Bachelors degree in Computer Science, with a focus on data science and software engineering.",
+        "Certificates of special studies in Software Engineering, Data Science and Advanced Programming Techniques.",
+      ]}
+      imgSrc="/img/usp.jpg"
+      imgAlt="University of São Paulo logo"
+    />
+  );
+}
+
+function WorkExperience() {
+  return (
+    <section id="workexperience" className="my-12 p-6">
+      <SectionTitle text="Work Experience" />
+      <Freelancer />
+      <Embraer />
+      <CPXDigital />
+    </section>
+  );
+}
+
+function Education() {
+  return (
+    <section id="education" className="my-12 p-6">
+      <SectionTitle text="Education" />
+      <USP />
+    </section>
+  );
+}
+
+type CertificateProps = {
+  title: string;
+  issuer: string;
+  file: string;
+};
+
+function Certificate({ title, issuer, file }: CertificateProps) {
+  return (
+    <Link
+      href={file}
+      target="_blank"
+    >
+      <div className="my-6 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <div className="flex justify-between">
+          <h3 className="text-lg text-slate-900 dark:text-white float-left">
+            <strong>{title}</strong>
+          </h3>
+          <h3 className="text-lg text-slate-900 dark:text-white float-right">
+            {issuer}
+          </h3>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+function Certificates() {
+  return (
+    <section id="certificates" className="my-12 p-6">
+      <SectionTitle text="Certificates" />
+      <Certificate
+        title="Software Engineering"
+        issuer="University of São Paulo"
+        file="/certificates/Software Engineering.pdf"
+      />
+      <Certificate
+        title="Data Science"
+        issuer="University of São Paulo"
+        file="/certificates/Data Science.pdf"
+      />
+      <Certificate
+        title="Advanced Programming Techniques"
+        issuer="University of São Paulo"
+        file="/certificates/Advanced Programming Techniques.pdf"
+      />
+    </section>
+  )
+}
+
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-4xl">
-      <section id="aboutme" className="mb-12 p-6 sm:mt-10">
-        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
-          About me
-        </h2>
-        <div className="flex flex-col items-center gap-5 sm:flex-row">
-          <div className="relative size-40 shrink-0">
-            <Image
-              fill
-              src="/img/profile.jpg"
-              alt="Profile picture"
-              className="rounded-full"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <p className="text-xl text-slate-900 dark:text-white">
-            Hello! My name is Vinicius S. F. Kuhlmann. I&apos;m a data scientist
-            and web developer from São Paulo, Brazil. I have a Computer Science
-            bachelor&apos;s degree from the University of São Paulo, as well as
-            certificates for special studies in Data Science and Software
-            Engineering. I also have two years of internship experience and have
-            worked on many side projects.
-          </p>
-        </div>
-      </section>
-
-      <hr className="mx-auto bg-black dark:bg-white" />
-
-      <section id="workexperience" className="my-12 p-6">
-        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
-          Work experience
-        </h2>
-
-        <JobItem
-          jobTitle="Intern Data Analyst"
-          company="Embraer"
-          date="03/2023 - 12/2023"
-          companyDescription="Brazil's largest aerospace company and the world's third largest."
-          tasks={[
-            "Development of apps and automations in Power Platform and Python, like a production line inventory control app that updates the database through barcode scans, or a web scraper that collects data from a company platform.",
-            "Creation and maintenance of dashboards in Power BI that allowed management to monitor the production line, reducing the time to identify and solve problems.",
-            "Migrating data from Excel sheets, Sharepoint lists and a SAP ERP bank to an Oracle database, making all data handling much, much easier.",
-          ]}
-        />
-
-        <JobItem
-          jobTitle="Intern Programmer"
-          company="CPX Digital"
-          date="02/2023 - 02/2023"
-          companyDescription="A consulting firm that supports fundraising for startups."
-          tasks={[
-            "Development of web scraping scripts in Selenium to collect data from potential customers. This eliminated the need for manual data collection and saved the company hours of daily work.",
-            "Development of Python scripts that cross the potential customers network with the partners network. This allowed the company to select the best candidates for warm intros, increasing conversion.",
-          ]}
-        />
-      </section>
-
-      <hr className="mx-auto bg-black dark:bg-white" />
-
-      <section id="education" className="my-12 p-6">
-        <h2 className="mb-6 text-center text-4xl font-bold text-slate-900 sm:text-5xl dark:text-white">
-          Education
-        </h2>
-
-        <JobItem
-          jobTitle=""
-          company="University of São Paulo"
-          date="03/2019 - 12/2023"
-          companyDescription="The best university in Latin America and one of the best in the world according to QS World."
-          tasks={[
-            "Bachelor's degree in Computer Science",
-            "Special studies in Data Science and Software Engineering",
-          ]}
-        />
-      </section>
+    <main className="mx-auto max-w-5xl">
+      <Introduction />
+      <WorkExperience />
+      <Education />
+      <Certificates />
     </main>
   );
 }

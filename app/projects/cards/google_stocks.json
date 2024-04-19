@@ -1,0 +1,12 @@
+{
+  "href": "https://www.kaggle.com/code/vinikuhlmann/modelling-stocks-with-arma-egarch",
+  "title": "Stock Price Forecasting",
+  "imgSrc": "/img/google_stocks.png",
+  "imgAlt": "Plot of Google's stock prices and forecasted prices",
+  "description": "Fitting Google's stocks to a GARCH model in R to forecast future prices.",
+  "tags": [
+    "Statistics",
+    "R",
+    "Kaggle"
+  ]
+}

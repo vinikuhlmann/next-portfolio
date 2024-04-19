@@ -1,0 +1,11 @@
+{
+  "href": "https://vinikuhlmann.github.io/minesweeper/",
+  "title": "Minesweeper",
+  "imgSrc": "/img/Minesweeper.png",
+  "imgAlt": "Minesweeper",
+  "description": "A simple version of the classic game.",
+  "tags": [
+    "Frontend",
+    "Angular"
+  ]
+}

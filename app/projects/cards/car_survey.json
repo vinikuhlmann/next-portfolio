@@ -1,0 +1,12 @@
+{
+  "href": "https://www.kaggle.com/code/vinikuhlmann/factor-analysis-on-car-survey",
+  "title": "Car Survey Analysis",
+  "imgSrc": "/img/car_survey.jpg",
+  "imgAlt": "A sports car",
+  "description": "Identifying underlying factors in a car survey using Factor Analysis.",
+  "tags": [
+    "Statistics",
+    "Python",
+    "Kaggle"
+  ]
+}

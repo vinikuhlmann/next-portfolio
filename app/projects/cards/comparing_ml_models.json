@@ -1,0 +1,12 @@
+{
+  "href": "https://www.kaggle.com/code/vinikuhlmann/model-comparison-examples",
+  "title": "Comparing ML Models",
+  "imgSrc": "/img/comparing_ml_models.jpg",
+  "imgAlt": "Code output of a ML model diagnostic",
+  "description": "Comparing KNN, Decision Tree, Random Forest and MLP models using the Iris, Titanic and Cardiovascular Disease datasets.",
+  "tags": [
+    "Machine Learning",
+    "Python",
+    "Kaggle"
+  ]
+}

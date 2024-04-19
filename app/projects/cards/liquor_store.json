@@ -1,0 +1,12 @@
+{
+  "title": "Liquor Store UI",
+  "href": "https://ihc-bebidas-jdp0xa33u-thalessilva19.vercel.app/",
+  "imgSrc": "/img/liquor_store.jpg",
+  "imgAlt": "Liquor store website",
+  "description": "A web store UI mock focused on complete accessibility and responsiveness",
+  "tags": [
+    "Frontend",
+    "Next.js",
+    "React"
+  ]
+}

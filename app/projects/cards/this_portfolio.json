@@ -1,0 +1,12 @@
+{
+  "title": "This Portfolio",
+  "href": "https://github.com/vinikuhlmann/next-portfolio",
+  "imgSrc": "/img/source_code.jpg",
+  "imgAlt": "Source code",
+  "description": "Coded by me from scratch. The code is open source and is available on GitHub.",
+  "tags": [
+    "Frontend",
+    "Next.js",
+    "React"
+  ]
+}
