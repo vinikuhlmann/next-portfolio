@@ -9,8 +9,8 @@ export default function ProjectsPage() {
       <section id="projects" className="mb-12 p-6 sm:mt-10">
         <SectionTitle text="Projects" />
         <div className="grid justify-items-center gap-6 p-2 sm:grid-cols-2 lg:grid-cols-2">
-          {cardElems.map((elem) => (
-            <div className="w-full">
+          {cardElems.map((elem, index) => (
+            <div key={index} className="w-full">
               {elem}
             </div>
           ))}
